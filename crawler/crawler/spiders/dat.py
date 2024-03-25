@@ -16,14 +16,14 @@ class DatSpider(SitemapSpider):
 
     def parse(self, response):
         item = self.get_item(response)
-        body = set_body('default', response)
+        body = set_body(response, 'default')
         item["body"] = body
         item["hash"] = hash_body(body)
         yield item
 
     def parse_news_and_dat_report(self, response):
         item = self.get_item(response)
-        body = set_body('news_and_dat_report', response)
+        body = set_body(response, 'news_and_dat_report')
         item["body"] = body
         item["hash"] = hash_body(body)
         yield item

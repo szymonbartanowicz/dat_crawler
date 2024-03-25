@@ -15,10 +15,11 @@ def set_body(response, body_type):
 
 
 def set_site_html(response):
-    soup = BeautifulSoup(response.xpath('//html').get(), 'html.parser')
-    for trash in soup(['script', 'style', 'svg', 'img']):
-        trash.decompose()
-    return str(soup)
+    # soup = BeautifulSoup(response.xpath('//html').get(), 'html.parser')
+    # for trash in soup(['script', 'style', 'svg', 'img']):
+    #     trash.decompose()
+    # return str(soup)
+    return response.text
 
 
 def hash_body(body):
